@@ -35,6 +35,7 @@ python3 netcup_traffic_tester.py
 ### 4. 查询IP状态
 ```bash
 # GET请求（可直接在浏览器中访问）
+# 需要传递 ipv4IP=152.53.1.1  参数，就是你要查询流量限制的IPv4公网地址
 curl "http://localhost:51000/webhook/secret-0c68fb14-bb0d-41ca-a53f-a8ba0ea08fae?ipv4IP=152.53.1.1"
 
 # 健康检查
