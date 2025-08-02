@@ -1,0 +1,25 @@
+# 备份文件
+
+
+# Python缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# 临时文件
+*.tmp
+*.temp
+*.log 
+
+*task*
+config.json

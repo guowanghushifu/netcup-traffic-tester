@@ -1,0 +1,37 @@
+services:
+  netcup-tester:
+    build: .
+    image: netcup-traffic-throttle-tester:latest
+    container_name: netcup-tester
+    
+    # 挂载配置文件
+    volumes:
+      - ./config.json:/app/config.json:ro
+    
+    # 环境变量配置
+    environment:
+      - TZ=Asia/Shanghai
+
+    # 端口映射
+    ports:
+      - "51000:51000"
+    
+    # 自动重启
+    restart: unless-stopped
+    
+    # 健康检查（每10分钟一次）
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:51000/health || exit 1"]
+      interval: 10m
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # 日志配置（限制日志文件大小）
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3" 
+
+    stop_grace_period: 3s 

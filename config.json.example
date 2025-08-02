@@ -1,0 +1,14 @@
+{
+    "webhook_path": "/webhook/secret-0c68fb14-bb0d-41ca-a53f-a8ba0ea08fae",
+    "port": 51000,
+    "accounts": [
+        {
+            "loginname": "your_netcup_login_1",
+            "password": "your_netcup_password_1"
+        },
+        {
+            "loginname": "your_netcup_login_2", 
+            "password": "your_netcup_password_2"
+        }
+    ]
+} 
